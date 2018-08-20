@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>svg test</title>
+</head>
+<body>
+<div id="svgout"></div>
+<script src="svg.min.js"></script>
+<script>
+var s = Snap("#svgout");
+var tux = Snap.load("globe.svg", function ( loadedFragment ) {
+    s.append( loadedFragment );
+    var g = s.select("#globe");
+    g.attr({
+        height: 600,
+        width: 600,
+        viewBox: "0, 0, 20, 20"
+    });
+    var color = s.selectAll('path');
+    color.attr({
+        fill: "#f03"
+    });
+} );
+
+</script>
+</body>
+</html>
